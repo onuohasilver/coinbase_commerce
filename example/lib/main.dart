@@ -184,6 +184,7 @@ class _ExampleScreenState extends State<ExampleScreen> {
                   onPressed: () async {
                     List<CheckoutObject> image =
                         await coinbase.retrieveAllCheckouts;
+
                     setState(() {
                       output = image.length.toString();
                     });
