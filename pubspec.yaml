@@ -1,8 +1,7 @@
 name: coinbase_commerce
-description: A new Flutter package project.
+description: A wrapper for coinbase_commerce api to enable cryptocurrency transactions.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/onuohasilver/coinbase_commerce
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

@@ -26,8 +26,8 @@ class ExampleScreen extends StatefulWidget {
   _ExampleScreenState createState() => _ExampleScreenState();
 }
 
-Coinbase coinbase =
-    Coinbase('8884c17e-6854-43a5-9d48-7a8ec885776d', debug: true);
+String apiKey = '';
+Coinbase coinbase = Coinbase(apiKey, debug: true);
 String output = 'Output';
 
 class _ExampleScreenState extends State<ExampleScreen> {
