@@ -1,14 +1,31 @@
 # coinbase_commerce
 
-A new Flutter package project.
+A dart library that connects to interact with the Coinbase Commerce API. 
+Enables projects to connect seamlessly to coinbase and receive payments!
 
-## Getting Started
+For more details visit Coinbase API docs.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+To start using library, you need to register on Commerce SignUp. And get your API_KEY from user settings.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Next create a Coinbase object for interacting with the API:
+the object contains links to an dart Class representations of the API resources Checkout, Charge and Invoice.
+
+Each request returns a CoinbaseResponseObject.
+Every CoinbaseResponseObject matches the API response Jsons and casts them as models.
+
+# Features
+* Create Charges
+* Cancel Charges
+* View Charges
+* List Charges
+* View The Status of Charges
+* Create Invoices
+* View Invoices
+* List Invoices
+* Create Checkouts
+* Delete Checkouts
+* View Checkouts
+* List Checkouts
+
+# Usage
+

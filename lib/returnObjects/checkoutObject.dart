@@ -1,4 +1,3 @@
-import 'package:coinbase_commerce/enums.dart';
 import 'package:coinbase_commerce/returnObjects/errorObject.dart';
 
 class CheckoutObject extends CoinbaseResponseObject {
