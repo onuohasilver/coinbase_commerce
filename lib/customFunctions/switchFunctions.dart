@@ -36,6 +36,7 @@ TransactionStatus getTransactionStatus(String status) {
       return TransactionStatus.refund_pending;
     case 'REFUNDED':
       return TransactionStatus.refunded;
+
     default:
       return TransactionStatus.new_;
   }

@@ -35,7 +35,7 @@ class ChargeObject extends CoinbaseResponseObject {
       redirectUrl;
   final DateTime? createdAt, expiresAt, confirmedAt;
   final Map? exchangeRate, metaData, addresses, pricing;
-  final List<Map<String, dynamic>>? payments, timeline;
+  final List? payments, timeline;
   final ErrorObject? error;
   final String? pricingType;
   final bool? isSuccessful;

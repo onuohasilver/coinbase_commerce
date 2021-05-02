@@ -9,6 +9,7 @@ enum TransactionStatus {
   unresolved,
   canceled,
   refund_pending,
-  refunded
+  refunded,
+  none
 }
 enum Verbose { high, low }

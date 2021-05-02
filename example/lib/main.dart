@@ -1,7 +1,7 @@
 import 'package:coinbase_commerce/coinbase_commerce.dart';
+import 'package:coinbase_commerce/returnObjects/statusObject.dart';
 
 import 'package:flutter/material.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -57,8 +57,10 @@ class _ExampleScreenState extends State<ExampleScreen> {
                         pricingType: PricingType.fixedPrice,
                         amount: 40);
 
+                    StatusObject status =
+                        StatusCheck().checkChargeStatus(image);
                     setState(() {
-                      output = image.toString();
+                      output = status.status.toString();
                     });
                   },
                   child: Text('Create a Charge'),
@@ -67,9 +69,10 @@ class _ExampleScreenState extends State<ExampleScreen> {
                   onPressed: () async {
                     ChargeObject image =
                         await coinbase.cancelCharge('MJ7ED8BQ');
-
+                    StatusObject status =
+                        StatusCheck().checkChargeStatus(image);
                     setState(() {
-                      output = image.toString();
+                      output = status.status.toString();
                     });
                   },
                   child: Text('Cancel a Charge'),
