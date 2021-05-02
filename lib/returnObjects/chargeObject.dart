@@ -4,6 +4,7 @@ import '../coinbase_commerce.dart';
 class ChargeObject extends CoinbaseResponseObject {
   ChargeObject({
     this.confirmedAt,
+    this.pricing,
     this.isSuccessful,
     this.error,
     this.cancelUrl,
@@ -33,8 +34,8 @@ class ChargeObject extends CoinbaseResponseObject {
       cancelUrl,
       redirectUrl;
   final DateTime? createdAt, expiresAt, confirmedAt;
-  final Map? exchangeRate, metaData, addresses;
-  final List? payments, timeline;
+  final Map? exchangeRate, metaData, addresses, pricing;
+  final List<Map<String, dynamic>>? payments, timeline;
   final ErrorObject? error;
   final String? pricingType;
   final bool? isSuccessful;
@@ -57,6 +58,7 @@ class ChargeObject extends CoinbaseResponseObject {
         expiresAt: DateTime.tryParse(data['expires_at'].toString()),
         url: data['hosted_url'],
         id: data['id'],
+        pricing: data['pricing'],
         payments: data['payments'],
         supportEmail: data['support_email'],
         timeline: data['timeline']);

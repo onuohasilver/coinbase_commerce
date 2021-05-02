@@ -46,6 +46,7 @@ class InvoiceObject extends CoinbaseResponseObject {
             : ChargeObject(),
         status: data['status'],
         customerEmail: data['customer_email'],
+        url: data['hosted_url'],
         customerName: data['customer_name'],
         memo: data['memo'],
         createdAt: DateTime.tryParse(data['created_at'].toString()),
@@ -67,7 +68,8 @@ class InvoiceObject extends CoinbaseResponseObject {
       'memo': memo,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
-      'localPrice': localPrice
+      'localPrice': localPrice,
+      'url': url
     };
     return collection.toString();
   }
