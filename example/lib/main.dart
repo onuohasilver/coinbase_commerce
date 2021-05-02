@@ -118,7 +118,7 @@ class _ExampleScreenState extends State<ExampleScreen> {
                 TextButton(
                   onPressed: () async {
                     CheckoutObject image = await coinbase
-                        .viewCheckout('e8e6d87c-d591-4ff4-bff6-0c8aaa161f29');
+                        .viewCheckout('c4357d83-42d4-4d7b-bc44-d0262b1efd25');
                     setState(() {
                       output = image.toString();
                     });
@@ -128,7 +128,7 @@ class _ExampleScreenState extends State<ExampleScreen> {
                 TextButton(
                   onPressed: () async {
                     CheckoutObject image = await coinbase.deleteCheckout(
-                        checkoutID: 'e8e6d87c-d591-4ff4-bff6-0c8aaa161f29');
+                        checkoutID: 'c4357d83-42d4-4d7b-bc44-d0262b1efd25');
                     setState(() {
                       output = image.toString();
                     });
@@ -189,6 +189,16 @@ class _ExampleScreenState extends State<ExampleScreen> {
                     });
                   },
                   child: Text('List all checkouts'),
+                ),
+                TextButton(
+                  onPressed: () async {
+                    List<InvoiceObject> image =
+                        await coinbase.retrieveAllInvoices;
+                    setState(() {
+                      output = image.length.toString();
+                    });
+                  },
+                  child: Text('List all invoices'),
                 ),
               ],
             ),
