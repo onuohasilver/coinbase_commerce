@@ -54,6 +54,7 @@ class InvoiceObject extends CoinbaseResponseObject {
         localPrice: data['local_price']);
   }
 
+  ///Returns the [InvoiceObject] as a [String] object.
   @override
   String toString() {
     Map collection = {

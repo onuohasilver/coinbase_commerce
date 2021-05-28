@@ -1,6 +1,6 @@
 name: coinbase_commerce
 description: A wrapper for coinbase_commerce api to enable cryptocurrency transactions.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/onuohasilver/coinbase_commerce
 
 environment:

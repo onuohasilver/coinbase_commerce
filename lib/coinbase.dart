@@ -393,7 +393,7 @@ class Coinbase {
     return coinbaseResponse;
   }
 
-  ///Returns all Invoices in a List
+  ///Returns all Invoices as a List Object
   Future<List<InvoiceObject>> get retrieveAllInvoices async {
     List<InvoiceObject> coinbaseResponse;
     List data;

@@ -2,12 +2,12 @@ import 'errorObject.dart';
 import '../coinbase_commerce.dart';
 
 ///A simple ChargeObject Entity
+///Charge Objects are a model for the responses gotten from
+///Coinbase when charge requests are made.
+///It contains  all the accompanying data from such request
+///resulting information from Charge Objects can be further utilized
+///to determine the status of a given charge.
 class ChargeObject extends CoinbaseResponseObject {
-  ///Charge Objects are a model for the responses gotten from
-  ///Coinbase when charge requests are made.
-  ///It contains  all the accompanying data from such request
-  ///resulting information from Charge Objects can be further utilized
-  ///to determine the status of a given charge.
   ChargeObject({
     this.confirmedAt,
     this.pricing,
