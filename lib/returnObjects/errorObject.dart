@@ -1,3 +1,4 @@
+/// A simple [ErrorObject] entity.
 class ErrorObject extends CoinbaseResponseObject {
   ///Returns an entity containing the type of error and the accompanying message for
   ErrorObject({
@@ -16,7 +17,7 @@ class ErrorObject extends CoinbaseResponseObject {
     return ErrorObject(type: data['type'], message: data['message']);
   }
 
-  ///Returns the errorObject fields as a String object
+  ///Returns the [ErrorObject] fields as a [String] object
   @override
   String toString() {
     Map collection = {'type': type, 'message': message};

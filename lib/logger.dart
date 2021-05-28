@@ -5,6 +5,8 @@ class Logger {
 
   Logger(this._debug);
   displayLog(String message) {
-    _debug ? print(message) : print(']');
+    if (_debug) {
+      print(message);
+    }
   }
 }

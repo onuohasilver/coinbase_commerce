@@ -15,8 +15,8 @@ String getPricingType(PricingType type) {
   }
 }
 
-// NEW, PENDING, COMPLETED, EXPIRED, UNRESOLVED, RESOLVED, CANCELED, REFUND PENDING, REFUNDED
-// Every charge object has a timeline of status updates.
+/// NEW, PENDING, COMPLETED, EXPIRED, UNRESOLVED, RESOLVED, CANCELED, REFUND PENDING, REFUNDED
+/// Every charge object has a timeline of status updates.
 TransactionStatus getTransactionStatus(String status) {
   switch (status) {
     case 'NEW':

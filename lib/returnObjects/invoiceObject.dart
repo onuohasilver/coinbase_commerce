@@ -1,10 +1,10 @@
 import 'package:coinbase_commerce/returnObjects/chargeObject.dart';
 import 'package:coinbase_commerce/returnObjects/errorObject.dart';
 
+///A check to confirm whether the response completed successfully
+///An [isSuccessful] value is contained in each of the [CoinbaseChargeObjects]
+///this value shows returns true when there is a successful request
 class InvoiceObject extends CoinbaseResponseObject {
-  ///A check to confirm whether the response completed successfully
-  ///An [isSuccessful] value is contained in each of the [CoinbaseChargeObjects]
-  ///this value shows returns true when there is a successful request
   InvoiceObject({
     this.isSuccessful,
     this.error,
@@ -33,7 +33,7 @@ class InvoiceObject extends CoinbaseResponseObject {
   final ErrorObject? error;
   final ChargeObject? charge;
 
-  fromJson(Map data) {
+  factory InvoiceObject.fromJson(Map data) {
     return InvoiceObject(
         businessName: data['business_name'],
         isSuccessful: !data.containsKey('message'),

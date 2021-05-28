@@ -209,7 +209,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = CheckoutObject().fromJson(data);
+    coinbaseResponse = CheckoutObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -256,7 +256,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = CheckoutObject().fromJson(data);
+    coinbaseResponse = CheckoutObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -275,7 +275,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = CheckoutObject().fromJson(data);
+    coinbaseResponse = CheckoutObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -295,7 +295,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = CheckoutObject().fromJson(data);
+    coinbaseResponse = CheckoutObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -314,7 +314,7 @@ class Coinbase {
       data = response['data'];
     }
     coinbaseResponse = List.generate(
-        data.length, (index) => CheckoutObject().fromJson(data[index]));
+        data.length, (index) => CheckoutObject.fromJson(data[index]));
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -346,7 +346,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = InvoiceObject().fromJson(data);
+    coinbaseResponse = InvoiceObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -364,7 +364,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = InvoiceObject().fromJson(data);
+    coinbaseResponse = InvoiceObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -388,7 +388,7 @@ class Coinbase {
     }
 
     ///Cast an [InvoiceObject] from the returned Map
-    coinbaseResponse = InvoiceObject().fromJson(data);
+    coinbaseResponse = InvoiceObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -407,7 +407,7 @@ class Coinbase {
       data = response['data'];
     }
     coinbaseResponse = List.generate(
-        data.length, (index) => InvoiceObject().fromJson(data[index]));
+        data.length, (index) => InvoiceObject.fromJson(data[index]));
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }

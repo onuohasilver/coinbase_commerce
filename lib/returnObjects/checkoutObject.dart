@@ -1,5 +1,12 @@
+import 'package:coinbase_commerce/coinbase_commerce.dart';
 import 'package:coinbase_commerce/returnObjects/errorObject.dart';
 
+///A simple [CheckoutObject] entity
+///[CheckoutObject] is a model for the responses gotten from
+///Coinbase when checkout requests are made.
+///It contains  all the accompanying data from such request
+///resulting information from Checkout Objects can be further utilized
+///to determine the status of a given Checkout.
 class CheckoutObject extends CoinbaseResponseObject {
   CheckoutObject({
     this.url,
@@ -17,7 +24,7 @@ class CheckoutObject extends CoinbaseResponseObject {
   final String? pricingType;
   final List? requestedInfo;
 
-  CheckoutObject fromJson(Map data) {
+  factory CheckoutObject.fromJson(Map data) {
     return CheckoutObject(
       description: data['description'],
       id: data['id'],
@@ -32,6 +39,7 @@ class CheckoutObject extends CoinbaseResponseObject {
     );
   }
 
+  ///Returns the [CheckoutObject] fields as a [String] object
   @override
   String toString() {
     Map collection = {
