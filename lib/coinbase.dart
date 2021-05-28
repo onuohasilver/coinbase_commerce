@@ -44,11 +44,17 @@ class Coinbase {
     ///A check to ensure that a value for amount is supplied
     ///anytime there is a fixed_price
     if (pricingType == PricingType.fixedPrice) {
+      ///Make sure that the [amount] field has been specified
       assert(amount != null);
     }
+
+    /// The response gotten from coinbase is stored here
     ChargeObject coinbaseResponse;
+
+    /// Data retrieved from Coinbase API
     Map data;
 
+    /// Map
     Map response = await postToDB(
       apiKey: _apiKey,
       api: 'https://api.commerce.coinbase.com/charges',
@@ -66,13 +72,14 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = ChargeObject().fromJson(data);
+    coinbaseResponse = ChargeObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
 
     return coinbaseResponse;
   }
 
   ///Returns a list of the Charges associated with the Coinbase account
+  ///TODO: The List of retrieved charges should be looped through
   Future<List<ChargeObject>> get retrieveAllCharges async {
     List<ChargeObject> coinbaseResponse;
     List data;
@@ -87,7 +94,7 @@ class Coinbase {
     }
 
     coinbaseResponse = List.generate(
-        data.length, (index) => ChargeObject().fromJson(data[index]));
+        data.length, (index) => ChargeObject.fromJson(data[index]));
 
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
@@ -111,7 +118,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = ChargeObject().fromJson(data);
+    coinbaseResponse = ChargeObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -132,7 +139,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = ChargeObject().fromJson(data);
+    coinbaseResponse = ChargeObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }
@@ -152,7 +159,7 @@ class Coinbase {
     } else {
       data = response['data'];
     }
-    coinbaseResponse = ChargeObject().fromJson(data);
+    coinbaseResponse = ChargeObject.fromJson(data);
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
   }

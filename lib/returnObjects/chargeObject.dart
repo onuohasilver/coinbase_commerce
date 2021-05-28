@@ -1,7 +1,13 @@
 import 'errorObject.dart';
 import '../coinbase_commerce.dart';
 
+///A simple ChargeObject Entity
 class ChargeObject extends CoinbaseResponseObject {
+  ///Charge Objects are a model for the responses gotten from
+  ///Coinbase when charge requests are made.
+  ///It contains  all the accompanying data from such request
+  ///resulting information from Charge Objects can be further utilized
+  ///to determine the status of a given charge.
   ChargeObject({
     this.confirmedAt,
     this.pricing,
@@ -40,13 +46,13 @@ class ChargeObject extends CoinbaseResponseObject {
   final String? pricingType;
   final bool? isSuccessful;
 
-  fromJson(Map data) {
+  factory ChargeObject.fromJson(Map data) {
     return ChargeObject(
         metaData: data['metadata'],
         name: data['name'],
         isSuccessful: !data.containsKey('message'),
         error: data.containsKey('message')
-            ? ErrorObject().fromJson(data)
+            ? ErrorObject.fromJson(data)
             : ErrorObject(),
         description: data['description'],
         pricingType: data['pricing_type'],
@@ -64,6 +70,7 @@ class ChargeObject extends CoinbaseResponseObject {
         timeline: data['timeline']);
   }
 
+  ///Returns the [ChargeObject] fields as a [String] object
   @override
   String toString() {
     Map collection = {

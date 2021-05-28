@@ -23,7 +23,7 @@ class CheckoutObject extends CoinbaseResponseObject {
       id: data['id'],
       isSuccessful: !data.containsKey('message'),
       error: data.containsKey('message')
-          ? ErrorObject().fromJson(data)
+          ? ErrorObject.fromJson(data)
           : ErrorObject(),
       name: data['name'],
       url: "https://commerce.coinbase.com/checkout/${data['id']}",

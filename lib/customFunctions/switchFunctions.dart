@@ -39,16 +39,19 @@ TransactionStatus getTransactionStatus(String status) {
       return TransactionStatus.refunded;
 
     default:
-      return TransactionStatus.new_;
+      return TransactionStatus.none;
   }
 }
 
-String getCurrency(CurrencyType type) {
+///Return the Currency Type
+///TODO: Should be able to set other Currency Types
+String getCurrency([CurrencyType? type, String? optionalCurrency]) {
+  ///Ensure  that either [type] or [optionalCurrency] must be provided.
+  assert((type != null) | (optionalCurrency != null));
   switch (type) {
     case CurrencyType.usd:
       return 'USD';
-
     default:
-      return 'usd';
+      return optionalCurrency!;
   }
 }

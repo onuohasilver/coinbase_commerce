@@ -38,11 +38,11 @@ class InvoiceObject extends CoinbaseResponseObject {
         businessName: data['business_name'],
         isSuccessful: !data.containsKey('message'),
         error: data.containsKey('message')
-            ? ErrorObject().fromJson(data)
+            ? ErrorObject.fromJson(data)
             : ErrorObject(),
         code: data['code'],
         charge: data.containsKey('charge')
-            ? ChargeObject().fromJson(data['charge'])
+            ? ChargeObject.fromJson(data['charge'])
             : ChargeObject(),
         status: data['status'],
         customerEmail: data['customer_email'],

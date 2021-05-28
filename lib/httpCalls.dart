@@ -2,6 +2,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 ///helper methods for http requests
+///TODO: Map httpCalls to Singleton Class
+
+///Generic Post function to make Post API calls
 Future<Map> postToDB(
     {required String api,
     required String apiKey,
@@ -16,10 +19,10 @@ Future<Map> postToDB(
     },
     body: jsonEncode(body),
   );
-  print(response.body);
   return jsonDecode(response.body);
 }
 
+///Generic Get function to make Get API calls
 Future<Map> getFromDB({required String api, required String apiKey}) async {
   final http.Response response = await http.get(
     Uri.parse(api),
@@ -32,6 +35,7 @@ Future<Map> getFromDB({required String api, required String apiKey}) async {
   return jsonDecode(response.body);
 }
 
+///Generic Put function to make Put API calls
 Future<Map> putOnDB(
     {required String api, required String apiKey, required Map body}) async {
   final http.Response response = await http.put(Uri.parse(api),
@@ -41,10 +45,10 @@ Future<Map> putOnDB(
         'X-CC-Api-Key': apiKey,
       },
       body: jsonEncode(body));
-
   return jsonDecode(response.body);
 }
 
+///Generic Delete function to make delete API calls
 Future<Map> deleteFromDB({required String api, required String apiKey}) async {
   final http.Response response = await http.delete(
     Uri.parse(api),
@@ -54,6 +58,5 @@ Future<Map> deleteFromDB({required String api, required String apiKey}) async {
       'X-CC-Api-Key': apiKey,
     },
   );
-
   return jsonDecode(response.body);
 }
