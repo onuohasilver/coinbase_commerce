@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:core';
 import 'package:coinbase_commerce/logger.dart';
+import 'package:coinbase_commerce/returnObjects/statusObject.dart';
+import 'package:coinbase_commerce/statusChecks.dart';
 
 import 'returnObjects/checkoutObject.dart';
 import 'returnObjects/invoiceObject.dart';
@@ -410,5 +412,10 @@ class Coinbase {
         data.length, (index) => InvoiceObject.fromJson(data[index]));
     Logger(debug).displayLog(coinbaseResponse.toString());
     return coinbaseResponse;
+  }
+
+  /// Retrieve the status of a given Charge
+  StatusObject checkChargeStatus(ChargeObject chargeObject) {
+    return StatusCheck.checkChargeStatus(chargeObject);
   }
 }

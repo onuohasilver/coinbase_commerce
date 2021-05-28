@@ -7,7 +7,7 @@ import 'returnObjects/statusObject.dart';
 class StatusCheck {
   ///Checks the current status of a charge object
   ///A status Object containing only [TransactionStatus.none] means the charge doesn't exist
-  StatusObject checkChargeStatus(ChargeObject chargeObject) {
+  static StatusObject checkChargeStatus(ChargeObject chargeObject) {
     if (chargeObject.isSuccessful!) {
       ///Maps the retutrning status value of the charge to a [TransactionStatus] enum.
       TransactionStatus? status =

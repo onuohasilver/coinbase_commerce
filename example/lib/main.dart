@@ -57,8 +57,7 @@ class _ExampleScreenState extends State<ExampleScreen> {
                         pricingType: PricingType.fixedPrice,
                         amount: 40);
 
-                    StatusObject status =
-                        StatusCheck().checkChargeStatus(image);
+                    StatusObject status = coinbase.checkChargeStatus(image);
                     setState(() {
                       output = status.status.toString();
                     });
@@ -69,8 +68,7 @@ class _ExampleScreenState extends State<ExampleScreen> {
                   onPressed: () async {
                     ChargeObject image =
                         await coinbase.cancelCharge('MJ7ED8BQ');
-                    StatusObject status =
-                        StatusCheck().checkChargeStatus(image);
+                    StatusObject status = coinbase.checkChargeStatus(image);
                     setState(() {
                       output = status.status.toString();
                     });
